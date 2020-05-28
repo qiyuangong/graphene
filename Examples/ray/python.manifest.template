@@ -92,6 +92,23 @@ sgx.trusted_files.librt = file:$(GRAPHENEDIR)/Runtime/librt.so.1
 sgx.trusted_files.libutil = file:$(GRAPHENEDIR)/Runtime/libutil.so.1
 sgx.trusted_files.libpthread = file:$(GRAPHENEDIR)/Runtime/libpthread.so.0
 sgx.trusted_files.libyaml = file:/usr/lib/x86_64-linux-gnu/libyaml-0.so.2
+sgx.trusted_files.stdc = file:/usr/lib/x86_64-linux-gnu/libstdc++.so.6
+sgx.trusted_files.apt = file:/usr/lib/x86_64-linux-gnu/libapt-pkg.so.5.0
+sgx.trusted_files.nss_files = file:/lib/x86_64-linux-gnu/libnss_files.so.2
+sgx.trusted_files.nss_mdns = file:/lib/x86_64-linux-gnu/libnss_mdns4_minimal.so.2
+sgx.trusted_files.nss_dns = file:/lib/x86_64-linux-gnu/libnss_dns.so.2
+sgx.trusted_files.myhostname = file:/lib/x86_64-linux-gnu/libnss_myhostname.so.2
+sgx.trusted_files.resolv = file:/lib/x86_64-linux-gnu/libresolv.so.2
+sgx.trusted_files.lz4 = file:/usr/lib/x86_64-linux-gnu/liblz4.so.1
+sgx.trusted_files.zstd = file:/usr/lib/x86_64-linux-gnu/libzstd.so.1
+sgx.trusted_files.udev = file:/lib/x86_64-linux-gnu/libudev.so.1
+sgx.trusted_files.system = file:/lib/x86_64-linux-gnu/libsystemd.so.0
+sgx.trusted_files.gcrypt = file:/lib/x86_64-linux-gnu/libgcrypt.so.20
+sgx.trusted_files.gpge = file:/lib/x86_64-linux-gnu/libgpg-error.so.0
+sgx.trusted_files.cputable = file:/usr/share/dpkg/cputable
+sgx.trusted_files.tuplet = file:/usr/share/dpkg/tupletable
+sgx.trusted_files.lreso = file:../../Runtime/libresolv.so.2
+sgx.trusted_files.pstat = file:/proc/stat
 
 # Other libraries
 sgx.trusted_files.libz = file:$(ARCH_LIBDIR)/libz.so.1
