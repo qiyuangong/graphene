@@ -111,7 +111,7 @@ check: all
 	@grep -q "dot: " OUTPUT && echo "[ Success 1/2 ]"
 	@rm OUTPUT
 
-	./pal_loader python.manifest scripts/test-scipy.py > OUTPUT 2> /dev/null
+	./pal_loader python.manifest scripts/test-ray.py > OUTPUT 2> /dev/null
 	@sleep 1
 	@grep -q "cholesky: " OUTPUT && echo "[ Success 2/2 ]"
 	@rm OUTPUT
