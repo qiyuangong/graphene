@@ -2,9 +2,9 @@
 
 import ray
 
-ray.init(memory=100 * 1024 * 1024,
-         object_store_memory=80 * 1024 * 1024,
-         driver_object_store_memory=20 * 1024 * 1024)
+ray.init(memory=60 * 1024 * 1024,
+         object_store_memory=75 * 1024 * 1024,
+         driver_object_store_memory=5 * 1024 * 1024)
 
 @ray.remote
 def f(x):
