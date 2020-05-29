@@ -6,9 +6,7 @@ ray.init(memory=60 * 1024 * 1024,
          object_store_memory=75 * 1024 * 1024,
          driver_object_store_memory=15 * 1024 * 1024)
 
-@ray.remote
-def f(x):
-    return x * x
+assert ray.is_initialized() == True
 
-futures = [f.remote(i) for i in range(0)]
-print(ray.get(futures))
+ray.shutdown()
+assert ray.is_initialized() == False
