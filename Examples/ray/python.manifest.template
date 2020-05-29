@@ -40,6 +40,11 @@ fs.mount.usr.type = chroot
 fs.mount.usr.path = /usr
 fs.mount.usr.uri = file:/usr
 
+# Host-level directory (/usr/bin)
+fs.mount.usr.type = chroot
+fs.mount.usr.path = /usr/bin
+fs.mount.usr.uri = file:/usr/bin
+
 # Mount $PYTHONHOME
 fs.mount.pyhome.type = chroot
 fs.mount.pyhome.path = $(PYTHONHOME)
@@ -109,7 +114,6 @@ sgx.trusted_files.cputable = file:/usr/share/dpkg/cputable
 sgx.trusted_files.tuplet = file:/usr/share/dpkg/tupletable
 sgx.trusted_files.lreso = file:../../Runtime/libresolv.so.2
 sgx.trusted_files.pstat = file:/proc/stat
-sgx.trusted_files.redis_modu = file:/usr/lib/python3/dist-packages/ray/core/src/ray/gcs/redis_module/libray_redis_module.so
 
 # Other libraries
 sgx.trusted_files.libz = file:$(ARCH_LIBDIR)/libz.so.1
