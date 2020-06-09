@@ -23,9 +23,12 @@ command to install the required utility packages (Ubuntu-specific):
 ```
 
 ```bash
-    mv libHelloImpl.so /tmp
+    cp libHelloImpl.so /tmp
 ```
 
+```bash
+    jar cvf HelloJNI.jar HelloJNI.class libHelloImpl.so HelloJNI.h
+```
 
 ## Generating the manifest
 
@@ -44,13 +47,14 @@ Here's an example of running Python scripts under Graphene:
 Without SGX:
 
 ```bash
-./pal_loader java.manifest.sgx -XX:MaxHeapSize=28m -XX:CompressedClassSpaceSize=22m Hello
+./pal_loader java.manifest.sgx -XX:MaxHeapSize=28m -XX:CompressedClassSpaceSize=22m Java 2
 ```
 
 With SGX:
 
 ```bash
-SGX=1 ./pal_loader java.manifest.sgx -XX:MaxHeapSize=28m -XX:CompressedClassSpaceSize=22m Hello
+SGX=1 ./pal_loader java.manifest.sgx -XX:MaxHeapSize=28m -XX:CompressedClassSpaceSize=22m Java 2
+SGX=1 ./pal_loader java.manifest.sgx -cp HelloJNI.jar -XX:MaxHeapSize=28m -XX:CompressedClassSpaceSize=22m Java 2
 ```
 
 You can also manually run included tests:

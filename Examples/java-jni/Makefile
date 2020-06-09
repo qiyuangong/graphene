@@ -49,7 +49,7 @@ pal_loader:
 
 .PHONY: clean
 clean:
-	$(RM) *.h *.class *.so *.manifest *.manifest.sgx *.token *.sig pal_loader OUTPUT*
+	$(RM) *jar *.h *.class *.so *.manifest *.manifest.sgx *.token *.sig pal_loader OUTPUT*
 
 .PHONY: distclean
 distclean: clean
