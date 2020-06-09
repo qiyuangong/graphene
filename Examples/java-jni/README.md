@@ -19,8 +19,13 @@ command to install the required utility packages (Ubuntu-specific):
 ```
 
 ```bash
-
+    gcc -o libHelloImpl.so -lc -shared -I/usr/lib/jvm/java-11-openjdk-amd64/include -I/usr/lib/jvm/java-11-openjdk-amd64/include/linux HelloJNI.c
 ```
+
+```bash
+    mv libHelloImpl.so /tmp
+```
+
 
 ## Generating the manifest
 
