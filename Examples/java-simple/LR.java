@@ -1,31 +1,4 @@
-/*************************************************************************
- *  Name:         Kevin Wayne
- *  Login:        wayne
- *
- *  Compilation:  javac LR.java
- *  Execution:    java LR < input.txt
- *  
- *  Simpler linear regression data type.
- *  Reads a sequence of observation pairs from standard input,
- *  computes the best-fit line, and prints out the observation
- *  pairs and the predicted values.
- *
- *  % more lr4.txt
- *  4
- *   20.0  91.0
- *   40.0  83.0
- *   60.0  68.0
- *   80.0  50.0
- *
- *  % java LR < lr4.txt
- *  y = -0.69 x + 107.50
- *  20.00  91.00  93.70
- *  40.00  83.00  79.90
- *  60.00  68.00  66.10
- *  80.00  50.00  52.30
- *
- *************************************************************************/
-
+import java.util.Random;
 
 public class LR {
     private final double xbar, ybar;   // mean of x- and y-values
@@ -75,23 +48,26 @@ public class LR {
     public static void main(String[] args) {
 
         // read in input
-        int N = StdIn.readInt();
+	Random rand = new Random();
+        int N = rand.nextInt(10);
+        System.out.printf("N = %d\n", N); 
+
         double[] x = new double[N];
         double[] y = new double[N];
         for (int i = 0; i < N; i++) {
-            x[i] = StdIn.readDouble();
-            y[i] = StdIn.readDouble();
+            x[i] = rand.nextInt(100) * 1.0;
+            y[i] = rand.nextInt(100) * 1.0;
         }
 
         // compute best-fit line             
         LR lr = new LR(x, y);
         double a = lr.slope();
         double b = lr.intercept();
-        StdOut.printf("y = %.2f x + %.2f\n", a, b); 
+        System.out.printf("y = %.2f x + %.2f\n", a, b); 
 
         // print observation pairs and predicted values
         for (int i = 0; i < N; i++) {
-            StdOut.printf("%6.2f %6.2f %6.2f\n", x[i], y[i], lr.predict(x[i]));
+            System.out.printf("%6.2f %6.2f %6.2f\n", x[i], y[i], lr.predict(x[i]));
         }
     }
 }
