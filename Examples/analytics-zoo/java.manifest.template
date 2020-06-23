@@ -1,5 +1,8 @@
 loader.exec = file:/usr/bin/java
-loader.execname = java
+loader.argv0_override = java
+
+# Read application arguments directly from the command line. Don't use this on production!
+loader.insecure__use_cmdline_argv = 1
 
 # Graphene environment, including the path of the library OS and the debug
 # option (inline/none).
@@ -35,9 +38,9 @@ fs.mount.tmp.path = /tmp
 fs.mount.tmp.uri = file:/tmp
 
 # Graphene general options
-sgx.enclave_size = 12G
+sgx.enclave_size = 16G
 
-sgx.thread_num = 24
+sgx.thread_num = 48
 
 # SGX trusted libraries
 sgx.file_check_policy = allow_all_but_log
