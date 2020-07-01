@@ -81,6 +81,8 @@ sgx.thread_num = 8
 
 # SGX trusted libraries
 
+sgx.file_check_policy = allow_all_but_log
+
 # Glibc libraries
 sgx.trusted_files.ld = file:$(GRAPHENEDIR)/Runtime/ld-linux-x86-64.so.2
 sgx.trusted_files.libc = file:$(GRAPHENEDIR)/Runtime/libc.so.6
@@ -251,6 +253,7 @@ sgx.trusted_files.user02 = file:scripts/dummy-web-server.py
 sgx.trusted_files.user03 = file:scripts/fibonacci.py
 sgx.trusted_files.user04 = file:scripts/helloworld.py
 sgx.trusted_files.user05 = file:scripts/test-http.py
+sgx.trusted_files.user06 = file:scripts/test-multi-process.py
 
 # Python-required etc files
 sgx.trusted_files.mimetypes = file:/etc/mime.types
