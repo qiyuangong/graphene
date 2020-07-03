@@ -17,6 +17,15 @@ command to install the required utility packages (Ubuntu-specific):
 ```bash
     javac Hello.java
 ```
+```bash
+    javac TestFloat.java
+```
+
+```bash
+    javac CopyMemory.java
+    javac CopyMemory.java --add-exports java.base/sun.nio.ch=ALL-UNNAMED
+```
+
 
 ## Generating the manifest
 

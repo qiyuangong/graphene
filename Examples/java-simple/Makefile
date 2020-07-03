@@ -56,5 +56,8 @@ distclean: clean
 
 .PHONY: test
 test:
-	./pal_loader SGX java.manifest.sgx -XX:MaxHeapSize=28m -XX:CompressedClassSpaceSize=22m Hello
+	./pal_loader SGX java.manifest.sgx -XX:MaxHeapSize=128m -XX:CompressedClassSpaceSize=122m Hello
+	./pal_loader SGX java.manifest.sgx -XX:MaxHeapSize=128m -XX:CompressedClassSpaceSize=122m LR
+	./pal_loader SGX java.manifest.sgx -XX:MaxHeapSize=128m -XX:CompressedClassSpaceSize=122m TestFloat
+	./pal_loader SGX java.manifest.sgx -XX:MaxHeapSize=128m -XX:CompressedClassSpaceSize=122m CopyMemory
 
