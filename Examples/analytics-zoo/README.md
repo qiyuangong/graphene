@@ -14,8 +14,34 @@ command to install the required utility packages (Ubuntu-specific):
     sudo apt-get install openjdk-11-jdk
 ```
 
+### Test TensorFlow Java
+
 ```bash
-    javac Hello.java
+
+    git clone https://github.com/qiyuangong/Tensorflow_Java.git
+    cd Tensorflow_Java
+    mvn clean package
+    cp target/test-tensorflow-1.0-SNAPSHOT-jar-with-dependencies.jar ..
+```
+
+```bash
+    ./pal_loader java.manifest.sgx -cp test-tensorflow-1.0-SNAPSHOT-jar-with-dependencies.jar HelloTensorFlow
+```
+
+### Test Analytics-Zoo backedns
+
+```bash
+    git clone https://github.com/qiyuangong/Zoo_Benchmark.git
+    cd Zoo_Benchmark
+    mvn clean package
+    cp target/benchmark-0.2.0-SNAPSHOT-jar-with-dependencies.jar ..
+```
+
+Download Analytics-Zoo models and place it in current dir.
+
+```bash
+make SGX=1
+make test
 ```
 
 ## Generating the manifest
