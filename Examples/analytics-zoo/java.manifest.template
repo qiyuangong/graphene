@@ -38,9 +38,10 @@ fs.mount.tmp.path = /tmp
 fs.mount.tmp.uri = file:/tmp
 
 # Graphene general options
-sgx.enclave_size = 16G
-
-sgx.thread_num = 48
+sgx.enclave_size = 32G
+sys.brk.max_size = 8G
+sys.stack.size = 1G
+sgx.thread_num = 128
 
 # SGX trusted libraries
 sgx.file_check_policy = allow_all_but_log
