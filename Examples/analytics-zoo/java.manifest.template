@@ -37,11 +37,14 @@ fs.mount.tmp.type = chroot
 fs.mount.tmp.path = /tmp
 fs.mount.tmp.uri = file:/tmp
 
+
+sgx.enable_stats = 1
+
 # Graphene general options
-sgx.enclave_size = 16G
+sgx.enclave_size = 32G
 #sys.brk.max_size = 10G
-#sys.stack.size = 2G
-sgx.thread_num = 128
+#sys.stack.size = 100M
+sgx.thread_num = 96
 
 # CPU features
 #sgx.require_avx = 1
