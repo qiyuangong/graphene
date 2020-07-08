@@ -61,5 +61,5 @@ test:
 	#./pal_loader SGX java.manifest.sgx -XX:MaxHeapSize=6g -cp benchmark-0.2.0-SNAPSHOT-jar-with-dependencies.jar com.intel.analytics.zoo.benchmark.inference.OpenVINOPerf -m resnet_v1_50_i8.xml --iteration 5 --batchSize 4
 	#./pal_loader java.manifest.sgx -Dbigdl.engineType=mkldnn -cp benchmark-0.2.0-SNAPSHOT-jar-with-dependencies.jar com.intel.analytics.zoo.benchmark.inference.BigDLPerf -m analytics-zoo_resnet-50-int8_imagenet_0.5.0.model --iteration 1 --batchSize 4
 	#GDB=1 ./pal_loader java.manifest.sgx -Dbigdl.engineType=mkldnn -cp benchmark-0.2.0-SNAPSHOT-jar-with-dependencies.jar com.intel.analytics.zoo.benchmark.inference.BigDLPerf -m analytics-zoo_resnet-50-int8_imagenet_0.5.0.model --iteration 1 --batchSize 4
-	./pal_loader SGX java.manifest.sgx -XX:MaxHeapSize=7g -cp benchmark-0.2.0-SNAPSHOT-jar-with-dependencies.jar com.intel.analytics.zoo.benchmark.inference.TFNetPerf -m tf_res50 --iteration 1 --batchSize 4
-	#./pal_loader SGX java.manifest.sgx -XX:MaxHeapSize=7g -cp test-tensorflow-1.0-SNAPSHOT-jar-with-dependencies.jar HelloTensorFlow
+	#./pal_loader SGX java.manifest.sgx -XX:MaxHeapSize=7g -cp benchmark-0.2.0-SNAPSHOT-jar-with-dependencies.jar com.intel.analytics.zoo.benchmark.inference.TFNetPerf -m tf_res50 --iteration 1 --batchSize 4
+	./pal_loader SGX java.manifest.sgx -XX:MaxHeapSize=7g -cp test-tensorflow-1.0-SNAPSHOT-jar-with-dependencies.jar HelloTensorFlow
