@@ -11,6 +11,10 @@ loader.debug_type = $(GRAPHENEDEBUG)
 
 # Environment variables for java
 loader.env.LD_LIBRARY_PATH = /lib:/lib/x86_64-linux-gnu:/usr/lib:/usr/lib/x86_64-linux-gnu:/usr/lib/jvm/java-11-openjdk-amd64/lib/jli
+loader.env.HADOOP_CONF_DIR = /home/qiyuan/hdfs
+loader.env.USERNAME = root
+loader.env.USER = root
+#loader.env.HADOOP_PROXY_USER = qiyuan
 
 # Mounted FSes. The following "chroot" FSes mount a part of the host FS into the
 # guest. Other parts of the host FS will not be available in the guest.
@@ -37,14 +41,18 @@ fs.mount.tmp.type = chroot
 fs.mount.tmp.path = /tmp
 fs.mount.tmp.uri = file:/tmp
 
+fs.mount.etc2.type = chroot
+fs.mount.etc2.path = /etc
+fs.mount.etc2.uri = file:/etc
 
-sgx.enable_stats = 1
+
+#sgx.enable_stats = 1
 
 # Graphene general options
 sgx.enclave_size = 32G
 #sys.brk.max_size = 10G
 #sys.stack.size = 100M
-sgx.thread_num = 96
+sgx.thread_num = 80
 
 # CPU features
 #sgx.require_avx = 1
@@ -62,4 +70,21 @@ sgx.trusted_files.librt = file:$(GRAPHENEDIR)/Runtime/librt.so.1
 sgx.trusted_files.libutil = file:$(GRAPHENEDIR)/Runtime/libutil.so.1
 sgx.trusted_files.libpthread = file:$(GRAPHENEDIR)/Runtime/libpthread.so.0
 
+sgx.trusted_files.libnsscompat = file:/lib/x86_64-linux-gnu/libnss_compat.so.2
+sgx.trusted_files.libnssfiles = file:/lib/x86_64-linux-gnu/libnss_files.so.2
+sgx.trusted_files.libnssnis = file:/lib/x86_64-linux-gnu/libnss_nis.so.2
+
+
+# Name Service Switch (NSS) and getaddrinfo(3) configuration files
+sgx.allowed_files.nsswitch  = file:/etc/nsswitch.conf
+sgx.allowed_files.ethers    = file:/etc/ethers
+sgx.allowed_files.hosts     = file:/etc/hosts
+sgx.allowed_files.group     = file:/etc/group
+sgx.allowed_files.passwd    = file:/etc/passwd
+sgx.allowed_files.gaiconf   = file:/etc/gai.conf
+sgx.allowed_files.hostconf  = file:/etc/host.conf
+sgx.allowed_files.resolv    = file:/etc/resolv.conf
+
+
+sgx.allowed_files.hdfsconf = file:/home/qiyuan/hdfs
 sgx.allowed_files.tmpdir = file:/tmp
