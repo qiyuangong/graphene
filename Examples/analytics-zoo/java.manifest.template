@@ -55,7 +55,7 @@ sgx.enclave_size = 32G
 sgx.thread_num = 80
 
 # CPU features
-#sgx.require_avx = 1
+sgx.require_avx = 1
 #sgx.require_avx512 = 1
 
 # SGX trusted libraries
