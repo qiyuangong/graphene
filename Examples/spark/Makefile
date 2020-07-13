@@ -8,7 +8,7 @@
 # Use `make clean` to remove Graphene-generated files.
 
 # Listing the programs to be run inside the bash script
-PROGRAMS = ls cat rm cp date
+PROGRAMS = ls cat rm cp date env java nice dirname
 
 # Relative path to Graphene root and key for enclave signing
 GRAPHENEDIR ?= ../..
@@ -39,7 +39,7 @@ include ../../Scripts/Makefile.configs
 # binaries are already listed in the manifest template, so we can skip them
 # from the ldd results. This list also contains some runtime deps of Bash.
 GLIBC_DEPS = linux-vdso /lib64/ld-linux-x86-64 libc libm librt libdl libutil libpthread \
-             libselinux libpcre libacl libattr
+             libselinux libpcre libacl libattr libjli
 
 # Listing all Bash dependencies, besides Glibc libraries
 .INTERMEDIATE: $(addsuffix .deps,bash $(PROGRAMS))
