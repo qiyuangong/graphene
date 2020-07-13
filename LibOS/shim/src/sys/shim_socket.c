@@ -1214,9 +1214,9 @@ static ssize_t do_recvmsg(int fd, struct iovec* bufs, size_t nbufs, int flags,
     }
 
     if (flags & ~MSG_PEEK) {
-        debug("recvmsg()/recvmmsg()/recvfrom(): unknown flag (only MSG_PEEK is supported).\n");
-        ret = -EOPNOTSUPP;
-        goto out;
+        debug("recvmsg()/recvmmsg()/recvfrom(): unknown flag %#x (only MSG_PEEK is supported).\n", flags);
+        //ret = -EOPNOTSUPP;
+        //goto out;
     }
 
     lock(&hdl->lock);
