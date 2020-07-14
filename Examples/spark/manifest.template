@@ -22,6 +22,8 @@ loader.debug_type = $(GRAPHENEDEBUG)
 # Environment variables
 #loader.env.LD_LIBRARY_PATH = /lib:$(ARCH_LIBDIR)
 loader.env.LD_LIBRARY_PATH = /lib:/lib/x86_64-linux-gnu:/usr/lib:/usr/lib/x86_64-linux-gnu:/usr/lib/jvm/java-11-openjdk-amd64/lib/jli
+loader.env.SPARK_LOCAL_IP = 10.239.166.29
+
 
 # Mounted FSes. The following "chroot" FSes mount a part of the host FS into the
 # guest. Other parts of the host FS will not be available in the guest.
@@ -58,18 +60,14 @@ fs.mount.proc.type = chroot
 fs.mount.proc.path = /proc
 fs.mount.proc.uri = file:/proc
 
-fs.mount.dev.type = chroot
-fs.mount.dev.path = /dev
-fs.mount.dev.uri = file:/dev
-
-
 # SGX general options
 
 net.allow_bind.sparkwebport = :8080
+#net.allow_bind.masterrest = :6066
 net.allow_bind.sparkport = :7077
-#net.allow_bind.taskmanagerdataport = :6124
-#net.allow_bind.taskmanagerrpcport = :6125
-#blob.server.port = :8082
+net.allow_bind.appport = :4040
+net.allow_bind.sparkslave = :8081
+#blob.server.port = :8080
 
 # Set the virtual memory size of the SGX enclave. For SGX v1, the enclave
 # size must be specified during signing. If the program needs more virtual
@@ -89,7 +87,6 @@ sgx.thread_num = 512
 
 # SGX trusted libraries
 
-sgx.enclave_pal_file = file:$(LIBCDIR)/libpal-Linux-SGX.so
 # Glibc libraries
 sgx.trusted_files.ld = file:$(GRAPHENEDIR)/Runtime/ld-linux-x86-64.so.2
 sgx.trusted_files.libc = file:$(GRAPHENEDIR)/Runtime/libc.so.6
