@@ -11,7 +11,7 @@ loader.debug_type = $(GRAPHENEDEBUG)
 
 # Environment variables for java
 loader.env.LD_LIBRARY_PATH = /lib:/lib/x86_64-linux-gnu:/usr/lib:/usr/lib/x86_64-linux-gnu:/usr/lib/jvm/java-11-openjdk-amd64/lib/jli
-loader.env.HADOOP_CONF_DIR = /home/qiyuan/hdfs
+#loader.env.HADOOP_CONF_DIR = /home/qiyuan/hdfs
 loader.env.USERNAME = root
 loader.env.USER = root
 #loader.env.HADOOP_PROXY_USER = qiyuan
@@ -93,5 +93,4 @@ sgx.allowed_files.resolv    = file:/etc/resolv.conf
 sgx.allowed_files.procdir    = file:/proc
 
 
-sgx.allowed_files.hdfsconf = file:/home/qiyuan/hdfs
 sgx.allowed_files.tmpdir = file:/tmp
