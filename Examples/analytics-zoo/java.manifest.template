@@ -54,9 +54,9 @@ fs.mount.proc.uri = file:/proc
 
 # Graphene general options
 sgx.enclave_size = 32G
-#sys.brk.max_size = 10G
+sys.brk.max_size = 6G
 #sys.stack.size = 100M
-sgx.thread_num = 80
+sgx.thread_num = 120
 
 # CPU features
 #sgx.require_avx = 1
