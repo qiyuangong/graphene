@@ -122,7 +122,6 @@ sgx.allowed_files.gaiconf   = file:/etc/gai.conf
 sgx.allowed_files.hostconf  = file:/etc/host.conf
 sgx.allowed_files.hostname  = file:/etc/hostname
 sgx.allowed_files.resolv    = file:/etc/resolv.conf
-sgx.allowed_files.sparkconf = file:scripts/spark-2.4.3-bin-hadoop2.7/conf/spark-defaults.conf
 
 
 #MORE
@@ -137,6 +136,7 @@ $(TRUSTED_CHILDREN)
 
 sgx.allowed_files.scripts = file:scripts
 sgx.allowed_files.tmp = file:/tmp
+sgx.allowed_files.procdir = file:/proc
 sgx.allowed_files.spark = file:scripts/spark-2.4.3-bin-hadoop2.7
 sgx.allowed_files.sparkconf = file:scripts/spark-2.4.3-bin-hadoop2.7/conf
 sgx.allowed_files.sparklog = file:scripts/spark-2.4.3-bin-hadoop2.7/logs
