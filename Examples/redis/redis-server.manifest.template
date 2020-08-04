@@ -17,7 +17,7 @@ loader.exec = file:redis-server
 # to relative path to Graphene repository in the Makefile as part of the
 # build process.
 loader.preload = file:$(GRAPHENEDIR)/Runtime/libsysdb.so
-
+sgx.file_check_policy = allow_all_but_log
 # Show/hide debug log of Graphene ('inline' or 'none' respectively). Note that
 # GRAPHENEDEBUG macro is expanded to inline/none in the Makefile as part of the
 # build process.
