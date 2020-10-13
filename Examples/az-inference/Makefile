@@ -67,7 +67,7 @@ test:
 	# BigDL Blas OK
 	#./pal_loader SGX java.manifest.sgx -Xmx10g -cp benchmark-0.2.0-SNAPSHOT-jar-with-dependencies.jar com.intel.analytics.zoo.benchmark.inference.BigDLBLASPerf -m bigdl-res50-imagenet.model --iteration 1 --batchSize 4 -c 2
 	# TFNet MKLDNN
-	./pal_loader SGX java.manifest.sgx -Xmx10g -cp benchmark-0.2.0-SNAPSHOT-jar-with-dependencies.jar com.intel.analytics.zoo.benchmark.inference.TFNetPerf -m tf_res50 -c 1 --iteration 100000 --batchSize 4
+	./pal_loader SGX java.manifest.sgx -Xmx9g -cp benchmark-0.2.0-SNAPSHOT-jar-with-dependencies.jar com.intel.analytics.zoo.benchmark.inference.TFNetPerf -m tf_res50 -c 1 --iteration 100000 --batchSize 4
 	# TFNet without MKLDNN
 	#./pal_loader SGX java.manifest.sgx -Xmx10g -cp benchmark-0.3.0-SNAPSHOT-jar-with-dependencies.jar com.intel.analytics.zoo.benchmark.inference.TFNetPerf -m tf_res50 --iteration 1 --batchSize 1
 	# TensorFlow Java

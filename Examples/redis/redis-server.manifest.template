@@ -79,7 +79,7 @@ fs.mount.etc.uri = file:/etc
 # 1024MB then it will start failing with random errors. Greater enclave sizes
 # result in longer startup times, smaller enclave sizes are not enough for
 # typical Redis workloads.
-sgx.enclave_size = 1024M
+sgx.enclave_size = 4G
 
 # Set maximum number of in-enclave threads (somewhat arbitrarily) to 8. Recall
 # that SGX v1 requires to specify the maximum number of simulteneous threads at
@@ -89,7 +89,7 @@ sgx.enclave_size = 1024M
 # and one for asynchronous events/alarms. Redis is technically single-threaded
 # but spawns couple additional threads to do background bookkeeping. Therefore,
 # specifying '8' allows to run a maximum of 6 Redis threads which is enough.
-sgx.thread_num = 8
+sgx.thread_num = 48
 
 ############################# SGX: TRUSTED LIBS ###############################
 

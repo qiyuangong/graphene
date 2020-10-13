@@ -11,7 +11,7 @@ loader.debug_type = $(GRAPHENEDEBUG)
 
 # Environment variables for java
 loader.env.LD_LIBRARY_PATH = /lib:/lib/x86_64-linux-gnu:/usr/lib:/usr/lib/x86_64-linux-gnu:/usr/lib/jvm/java-11-openjdk-amd64/lib/jli
-loader.env.TF_MKL_ALLOC_MAX_BYTES = 10737418240
+loader.env.TF_MKL_ALLOC_MAX_BYTES = 314572800
 loader.env.OMP_NUM_THREADS = 24
 #loader.env.JAVA_HOME = /usr/lib/jvm/java-8-openjdk-amd64/jre
 #loader.env.HADOOP_CONF_DIR = /home/qiyuan/hdfs
